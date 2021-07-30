@@ -19,8 +19,8 @@ Digite a nota da prova 1: 70
 Digite a nota da prova 2: 50
 Digite a nota da prova 3: 65
 Digite o peso da prova 1: 1
-Digite o peso da prova 2: 2
-Digite o peso da prova 3: 3
+Digite o peso da prova 2: 1
+Digite o peso da prova 3: 2
 A nota media do aluno M. eh 60.83
 -------------------------------------------------------------------------------
 */
