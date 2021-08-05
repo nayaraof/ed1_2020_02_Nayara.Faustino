@@ -1,23 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    printf("<< Loteria >>\n");
-}
+int main () {
 
-/*
-=> A importância de R$ 780.000,00 será dividida entre três ganhadores de um concurso, sendo que da quantia total: 
-    O primeiro ganhador receberá 46%;
-    O segundo receberá 32%;
-    O terceiro receberá o restante;
-Calcule e imprima a quantia ganha por cada um dos ganhadores.
+	const int premio = 780000;
+	float ganhador1,ganhador2,ganhador3;
 
--------------------------------------------------------------------------------
-Exemplo de saída:
+		ganhador1 = (46*premio)/100;
+		ganhador2 = (32*premio)/100;
+		ganhador3 = (22*premio)/100;
 
-<< Loteria >>
-Valor total do premio: 780000
-Primeiro vencedor: 358800
-Segundo vencedor: 249600
-Terceiro vencedor: 171600
--------------------------------------------------------------------------------
-*/
+		printf("GANHADOR 1 = %.3f", ganhador1);
+		printf("GANHADOR 2 = %.3f", ganhador2);
+		printf("GANHADOR 3 = %.3f",ganhador3);
+	return 0;
+				}
+
