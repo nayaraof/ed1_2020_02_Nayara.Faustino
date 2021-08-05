@@ -1,22 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    printf("<< Media Aritmetica >>\n");
+int main () {
+    float n1,n2,n3,n4;
+    float media =0;
+    printf("Digite as notas do aluno:");
+    scanf("%f%f%f%f",&n1,&n2,&n3,&n4);
+
+    media = ((n1+n2+n3+n4)/4 );
+
+    printf(" a media eh %f ", media);
+
+    return 0 ;
+
 }
 
-/*
-=> Ler quatro notas e mostrar as notas e a média aritmética obtida.
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-
-<< Media Aritmetica >>
-Digite a 1a nota: 30
-Digite a 2a nota: 40
-Digite a 3a nota: 60
-Digite a 4a nota: 30
-===Notas===
-Nota 1: 30; Nota 2: 40; Nota 3: 60; Nota 4: 30
-Media: 40
--------------------------------------------------------------------------------
-*/
