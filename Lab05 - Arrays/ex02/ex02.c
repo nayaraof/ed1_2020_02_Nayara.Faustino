@@ -1,24 +1,18 @@
 #include <stdio.h>
 
-int main(){
-    printf("<< Listando um vetor - com loops >>\n");
+int main()
+{
+    int val[6];
+    int i;
+    printf("<<Listando um vetor>>\n");
 
+   for (i=0; i<6; i++){
+     printf("Entre com o numero %d:", i+1);
+     scanf("%d", &val[i]);
+   }
+
+    printf("\n");
+    printf("Valores lidos sao: %d %d %d %d %d %d", val[0], val[1], val[2], val[3], val[4], val[5]);
     return 0;
+
 }
-
-/*
-Crie um programa que lê 6 valores inteiros e em seguida mostra na tela os 
-valores lidos. Utilize loops e utilize vetores para armazenar os números.
-(pense qual o melhor loop: for, while ou do-while)
- 
-Exemplo de saída:
-<< Listando um vetor - com loops >>
-Entre com o numero 1: 5
-Entre com o numero 2: 6
-Entre com o numero 3: 4
-Entre com o numero 4: 0
-Entre com o numero 5: 3
-Entre com o numero 6: 6
-
-Valores lidos: 5 6 4 0 3 6
-*/
