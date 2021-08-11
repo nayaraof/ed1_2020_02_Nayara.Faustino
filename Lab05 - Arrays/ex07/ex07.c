@@ -1,29 +1,31 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("<< Normalizando as notas >>\n");
+int main()
+{
+    int i, maiorNota;
+    float  alunos[5];
+
+    printf("<<Normalizando as notas>>\n");
+
+    for(i=0;i<5;i++){
+        printf("Entre coma nota do aluno %d ", i+1);
+        scanf("%f", &alunos[i]);
+        maiorNota = alunos[0];
+    }
+
+    for(i=0;i<5;i++){
+        if(maiorNota < alunos[i]);
+           maiorNota = alunos[i];
+        }
+
+    printf("\n");
+    printf("Notas normalizadas");
+    printf("\n");
+
+     for(i=0;i<5;i++){
+        printf ("A nota do aluno %d eh %.0f\n", i+1, (alunos[i]/maiorNota) * 100);
+    }
 
     return 0;
 }
-
-/*
-Elabore um algoritmo para normalizar as notas de uma turma de 5 alunos.
-A maior nota deve virar 100 e as demais devem ser modificadas 
-proporcionalmente (pense em regra de três).
-
-Exemplo de Saída
-<< Normalizando as notas >>
-Entre com a nota do aluno 1: 16
-Entre com a nota do aluno 2: 20
-Entre com a nota do aluno 3: 30
-Entre com a nota do aluno 4: 45
-Entre com a nota do aluno 5: 50
-
-Notas normalizadas
-
-A nota do aluno 1 é 32
-A nota do aluno 2 é 40
-A nota do aluno 3 é 60
-A nota do aluno 4 é 90
-A nota do aluno 5 é 100
-*/
