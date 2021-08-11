@@ -1,26 +1,44 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("<< Five Values with index >>\n");
+int main()
+{
+    int vet[6],i,maior,menor;
+    int maiorp, menorp;
+    float media, soma;
+    printf("<< Five Values with index >>");
+    printf("\n");
+
+    for(i=0;i<5;i++){
+        printf("Entre com o numero %d: ", i+1);
+        scanf("%d",&vet[i]);
+        maior =vet[0];
+        menor = vet[0];
+    }
+
+    printf("\n");
+    printf("Os numeros digitados sao: ");
+     for(i=0;i<5;i++){
+            printf("%d", vet[i]);
+     if(maior  < vet[i]){
+        maior  = vet[i];
+        maiorp = i ;      }
+
+
+     if(menor  > vet[i]){
+        menor  = vet[i];
+        menorp = i ;
+
+     }
+     soma=soma +vet[i];
+     media=soma/5;
+     }
+
+     printf("\n");
+     printf("O maior valor eh: %d,  localizado na posicao %d do vetor \n", maior,maiorp);
+     printf("O menor valor eh: %d,  localizado na posicao %d do vetor \n", menor,menorp);
+     printf("A media  eh: %.1f", media);
+
 
     return 0;
 }
-
-/*
-Fazer um programa para ler 5 valores, e, em seguida, mostrar todos os valores
-lidos juntamente com o maior (Max), o menor (Min) e a média (Mean) dos valores
-Mostrar o índice (index) do vetor associado ao maior número e ao menor número 
-
-Exemplo de saída:
-<< Five Values with index >>
-Input #1: 5
-Input #2: 6
-Input #3: 4
-Input #4: 0
-Input #5: 3
-
-The numbers entered are: 5 6 4 0 3
-Max. Value: 6, index 1 of the array
-Min. Value: 0, index 3 of the array
-Mean: 3.6
-*/
