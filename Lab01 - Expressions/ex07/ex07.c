@@ -1,22 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    printf("<< Pagamento encanador >>\n");
+  float valordia = 30;
+  float taxair= 0.08;
+  float taxainss= 0.04;
+  float valorbruto ;
+  int dias;
+
+
+  printf(" Digite o numero de dias trab:");
+    scanf("%d",&dias);
+    valorbruto = (dias *valordia);
+
+
+    printf("o salario bruto e  %.2f:", valorbruto);
+
+    printf("O salario liquido e:  %.2f :",valorbruto - (valorbruto * taxair) -  (valorbruto * taxainss));
+    printf("taxa ir e:  %.2f :",  valorbruto * taxair );
+    printf("taxa inss e:  %.2f :", valorbruto * taxainss);
+
+    return 0;
+
 }
-
-/*
-=> Uma empresa contrata um encanador a R$ 30,00 por dia. Crie um programa que solicite o número de dias trabalhados pelo encanador 
-e imprima o valor bruto, o imposto, e a quantia líquida que deverá ser paga ao encanador, sabendo-se que são descontados 8% para 
-imposto de renda e 4% de ISS. 
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-
-<< Pagamento encanador >>
-Digite o numero de dias trabalhados: 30
-Valor bruto R$: 900
-Valor liquido R$: 792
-ISS R$: 36
-IR R$: 72
--------------------------------------------------------------------------------
-*/
