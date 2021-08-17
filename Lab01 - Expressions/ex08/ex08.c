@@ -1,21 +1,25 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 int main() {
-    printf("<< Pagamento encanador >>\n");
+  float valordia = 30;
+  float taxair= 0.08;
+  float taxainss= 0.04;
+  float valorbruto ;
+  int dias;
+
+
+  printf(" Digite o numero de dias trab:");
+    scanf("%d",&dias);
+    valorbruto = (dias *valordia);
+
+
+    printf("o salario bruto e  %.2f:", valorbruto);
+
+    printf("O salario liquido e:  %.2f :",valorbruto - (valorbruto * taxair) -  (valorbruto * taxainss));
+    printf("taxa ir e:  %.2f :",  valorbruto * taxair );
+    printf("taxa inss e:  %.2f :", valorbruto * taxainss);
+
+    return 0;
+
 }
-
-/*
-=> Um contador percebeu que o cálculo de IR do encanador estava errado, pois estava sendo calculado sobre o valor bruto que ele recebeu. 
-Refaça o programa anterior, considerando que o IR é sobre o valor bruto após o desconto do ISS.
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-
-<< Pagamento encanador >>
-Digite o numero de dias trabalhados: 30
-Valor bruto R$: 900
-Valor liquido R$: 794.88
-ISS R$: 36
-IR R$: 68.12
--------------------------------------------------------------------------------
-*/
