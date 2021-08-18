@@ -1,52 +1,71 @@
+3)
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
 
-int main(){
-    printf("<<  >>\n");
+int main()
+{
 
-    return 0;
+    struct endereco{
+
+    char rua[30];
+    int numero;
+    char complemento[20];
+    char cidade[20];
+    char estado[2];
+    int cep;
+
+    };
+
+    int i = 0;
+    struct endereco enderecos[3];
+
+
+    printf("Cadastro de Enderecos\n\n");
+
+    for(i=0;i<3;i++){
+
+        printf("Digite a Rua: ");
+        fflush(stdin);
+        gets(enderecos[i].rua);
+
+        printf("Digite o Numero: ");
+        fflush(stdin);
+        scanf("%d",&enderecos[i].numero);
+
+        printf("Digite o Complemento: ");
+        fflush(stdin);
+        gets(enderecos[i].complemento);
+
+        printf("Digite a Cidade: ");
+        fflush(stdin);
+        gets(enderecos[i].cidade);
+
+        printf("Digite o Estado(sigla): ");
+        fflush(stdin);
+        gets(enderecos[i].estado);
+
+        printf("Digite o CEP: ");
+        fflush(stdin);
+        scanf("%d",&enderecos[i].cep);
+
+        printf("\n");
+
+    }
+
+    printf("Enderecos no estado de MG\n\n");
+
+    for(i=0;i<3;i++){
+
+        if(strcmp(enderecos[i].estado,"mg") == 0|| strcmp(enderecos[i].estado,"MG") == 0|| strcmp(enderecos[i].estado,"Mg")== 0){
+            printf("Rua: %s Numero: %d Complemento: %s Cidade: %s Estado: %s CEP: %d \n",enderecos[i].rua, enderecos[i].numero, enderecos[i].complemento, enderecos[i].cidade, enderecos[i].estado, enderecos[i].cep);
+        }
+        else {printf("Nenhum endereco no estado de Minas Gerais\n");
+            return 0;
+        }
+    }
+
+
+   return 0;
 }
-
-/*
-1) Crie uma estrutura chamada endereco, que armazena Rua, Número, Complemento,
-Cidade, Estado e CEP (ilustração abaixo).  
-Cadastre 3 endereços. Mostre ao final, todos os dados dos endereços cadastrados que são do estado “MG”
-
-Endereco*
-+------------+------------+---------------+
-| Rua        | Número     |  Complemento  |    
-+------------+------------+---------------+
-| Cidade     | Estado     |     CEP       | 
-+------------+------------+---------------+
-
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-Rua: Joao
-Numero: 32
-Complemento: casa A
-Cidade: Uberlandia
-Estado: MG
-CEP: 38400034
-
-
-Rua: Almeida
-Numero: 43
-Complemento: Sem
-Cidade: Araguari
-Estado: MG
-CEP: 38400045
-
-
-Rua: Coronel Pedro
-Numero: 25
-Complemento: apto 40
-Cidade: Caldas Novas
-Estado: GO
-CEP: 75780023
-
-
-Enderecos cadastrados que sao de "MG":
-Joao, 32. casa A. Uberlandia-MG, 38400034.
-Almeida, 43. Sem. Araguari-MG, 38400045.
--------------------------------------------------------------------------------
-*/
