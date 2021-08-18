@@ -1,55 +1,111 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
 
-int main(){
-    printf("<<  >>\n");
+int main()
+{
 
-    return 0;
+    int i = 0;
+    int x=0;
+
+    float total = 0.0;
+    int dias=0;
+    float totalxdias = 0.0;
+    float relativoxdias = 0.0;
+    float individual = 0.0;
+
+    struct eletrodomesticos{
+
+    char nome[15];
+    float potencia;
+    float tempo;
+
+    };
+
+    struct eletrodomesticos eletro[5];
+
+
+
+    while(x != 3){
+
+        printf("\n\nMenu de Opcoes\n\n");
+        printf("1. Cadastre 5 eletrodomesticos\n");
+        printf("2. Relatorio de gastos\n");
+        printf("3. Sair\n");
+
+        scanf("%d", &x);
+        system("cls || clear");
+
+        switch(x)
+        {
+            case 1:
+
+                printf("Cadastre os 5 eletrodomesticos");
+
+                for(i=0;i<5;i++){
+
+                    printf("\nDigite o nome:");
+                    fflush(stdin);
+                    gets(eletro[i].nome);
+
+                    printf("\nDigite a potencia em KW:");
+                    fflush(stdin);
+                    scanf("%f", &eletro[i].potencia);
+
+                    printf("\nDigite o tempo ativo em Hrs:");
+                    fflush(stdin);
+                    scanf("%f", &eletro[i].tempo);
+
+                    fflush(stdin);
+
+                    }
+
+                break;
+
+
+            case 2:
+
+            printf("Digite um tempo t (dias) para ser calculado o Consumo Relativo:\n");
+
+                scanf("%d",&dias);
+
+            /*Consumo total da casa */
+
+                for(i=0;i<5;i++){
+
+                    total = total + (eletro[i].potencia * eletro[i].tempo);
+
+                    }
+                    totalxdias = total * dias;
+
+                    printf("Consumo total da casa em %d dias: %.2f\n\n",dias,totalxdias);
+
+            /*Consumo relativo eletros */
+
+
+
+                for(i=0;i<5;i++){
+
+                    individual = ((eletro[i].potencia * eletro[i].tempo)*dias)/totalxdias;
+
+
+                     printf("Consumo Relativo do(a) %s: %.2f%\n\n",eletro[i].nome,individual*100);
+                    }
+
+
+
+                break;
+
+
+
+            case 0:
+
+                break;
+
+            }
+    }
+
+
+   return 0;
 }
-
-/*
-6.Faça um programa que controla o consumo de energia dos eletrodomésticos de uma casa.
-
-    • Crie e leia as informações de 5 eletrodomésticos: o nome (máximo 15 letras), 
-      potencia (real,  em kW) e tempo ativo por dia (real, em horas).
-
-    • Leia um valor de tempo t (em dias), calcule e mostre o consumo total na casa e
-      o consumo relativo de cada eletrodoméstico  (consumo/consumo total) nesse período
-      de tempo. Apresente este ultimo dado em porcentagem.
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-Informe os dados do 1º eletrodomestico: 
-Nome: Geladeira
-Potencia: 800
-Tempo ativo por dia: 24
-
-Informe os dados do 2º eletrodomestico: 
-Nome: Ar Condicionado
-Potencia: 1500
-Tempo ativo por dia: 8
-
-Informe os dados do 3º eletrodomestico: 
-Nome: Chuveiro
-Potencia: 4500
-Tempo ativo por dia: 1
-
-Informe os dados do 4º eletrodomestico: 
-Nome: Radio
-Potencia: 100
-Tempo ativo por dia: 6
-
-Informe os dados do 5º eletrodomestico: 
-Nome: Computador
-Potencia: 750
-Tempo ativo por dia: 18
-
-Informe um valor de tempo (em dia): 30
-Consumo total: 1494000 KW
-Consumo relativo: 
-Geladeira 38.6%
-Ar Condicionado 24.1%
-Chuveiro 9.0%
-Radio 1.2%
-Computador 27.1%
--------------------------------------------------------------------------------
-*/
