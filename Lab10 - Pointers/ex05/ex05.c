@@ -1,7 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("<< Pointers >>\n");
+int main()
+{
+    char nome[] = "Jose Augusto";
+    char *c;
+    c = &nome;
 
-    return 0;
+    printf("%s", c);
+    c ++;
+
 }
