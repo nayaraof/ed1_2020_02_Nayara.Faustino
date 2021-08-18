@@ -1,42 +1,50 @@
 #include <stdio.h>
-//lembre-se de incluir as bibliotecas adequadas
+#include <stdlib.h>
 
-int main(){
-    printf("<< Vetor de pontos alocados dinamicamente >>");
-
+typedef struct pontint{
+    int px;
+    int py;
+} pontos;
+int main()
+{
+    pontos *ponto;
+    int qnt = 0, i = 0, menx = 0, maix = 0, meny = 0, maiy = 0;
+    printf("Digite a quantidade de pontos para cadastro: ");
+    scanf("%d", &qnt);
+    printf("\n");
+    ponto = malloc(sizeof(pontos) * qnt);  // Define o tamanho do array (quantidade de pontos que o cara quer colocar * o tamanho em bits de cada struct)
+    for(i=0;i<qnt;i++)
+    {
+        printf("Entre com a coordenada x do ponto %d: ", i);
+        scanf("%d", &ponto[i].px);
+		if(ponto[i].px >= ponto[maix].px)
+		{
+			maix = i;
+		}
+		if(ponto[i].px < ponto[menx].px)
+		{
+			menx = i;
+		}
+        printf("\n");
+        printf("Entre com a coordenada y do ponto %d: ", i);
+		if(ponto[i].py >= ponto[maiy].py)
+		{
+			maiy = i;
+		}
+		if(ponto[i].py < ponto[meny].py)
+		{
+			meny = i;
+		}
+        scanf("%d", &ponto[i].py);
+        printf("\n");
+    }
+    printf("Pontos digitados: ");
+    for(i=0;i<qnt;i++)
+    {
+        if(i == 0)
+            printf("(%d,%d)",ponto[i].px, ponto[i].py);
+        if(i > 0)
+            printf(";(%d,%d)",ponto[i].px, ponto[i].py);
+    }
     return 0;
 }
-
-/*
-5) Modifique o programa anterior incluindo quatro ponteiros, que apontarão para
-os seguintes pontos: mais a esquerda, mais a direita, mais acima, mais abaixo.
-Mostre quem são esses pontos utilizando esses ponteiros.
-
-Exemplo de saída:
-<< Vetor de pontos alocados dinamicamente >>
-Digite a quantidade de pontos a serem armazenados: 5
-
-Digite o valor da coordenada x do ponto 1: 2
-Digite o valor da coordenada y do ponto 1: 5
-
-Digite o valor da coordenada x do ponto 2: 4
-Digite o valor da coordenada y do ponto 2: 8
-
-Digite o valor da coordenada x do ponto 3: 3
-Digite o valor da coordenada y do ponto 3: 4
-
-Digite o valor da coordenada x do ponto 4: 6
-Digite o valor da coordenada y do ponto 4: 7
-
-Digite o valor da coordenada x do ponto 5: 23
-Digite o valor da coordenada y do ponto 5: 25
-
-
-Os pontos digitados sao: (2,5); (4,8); (3,4); (6,7); (23,25)
-
-Ponto mais a esquerda: (2,5)
-Ponto mais a direita: (23,25)
-Ponto mais acima: (23,25)
-Ponto mais abaixo: (3,4)
-
-*/
