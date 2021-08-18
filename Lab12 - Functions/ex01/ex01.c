@@ -1,29 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("Digite a quantidade de linhas a serem impressas: ");
-
-    return 0;
+int DesenhaLinha(){
+  printf("\n");
+  printf("========");
+  printf("\n");
 }
 
-/*
-=> Faça um procedimento chamado DesenhaLinha. Ele deve desenhar 
-uma linha na tela usando vários caracteres "=" (Ex: ========). 
-No programa principal execute várias chamadas a esse procedimento (use um loop).
+int main()
+{
+   int n,i;
+   printf("Entre com o numero de linhas: ");
+   scanf("%d",&n);
 
-Ex: DesenhaLinha(3) tem como saída:
-    ========
-    ========
-    ======== 
-
-No programa principal, solicite ao usuário quantas vezes a linha deverá ser desenhada.
-
--------------------------------------------------------------------------------
-Exemplo de Saída:
-
-Digite a quantidade de linhas a serem impressas: 3
-========
-========
-========
--------------------------------------------------------------------------------
-*/
+  for(i=0; i<n; i++){
+    DesenhaLinha();
+}
+ 
