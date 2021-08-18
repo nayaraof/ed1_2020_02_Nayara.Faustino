@@ -1,19 +1,20 @@
-#include <stdio.h>
+int main () {
+int a,b,x;
 
-int main() {
-    printf("== Troca do conteudo de variaveis ==\n");
-}
+    printf("<<Troca do conteudo de variaveis>>");
+    printf("\n");
 
-/*
-=> Faça um algoritmo que leia o valor de duas variáveis A e B e 
-troque os valores dessas variáveis.
+    printf("Entre com o valor de A:  ");
+    scanf("%d",&a);
 
--------------------------------------------------------------------------------
-Exemplo de saída:
+    printf("Entre com o valor de B:  ");
+    scanf("%d",&b);
 
-== Troca do conteudo de variaveis ==
-Entre com o valor de A: 5
-Entre com o valor de B: 6
-Apos a troca, o valor de A eh 6 e o de B eh 5
--------------------------------------------------------------------------------
-*/
+    x= a;
+    a=b;
+    b=x;
+
+    printf("Apos a troca, o valor de A eh %d   o valor de B eh  %d", a,b);
+
+    return 0;
+    }
