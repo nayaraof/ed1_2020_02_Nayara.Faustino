@@ -1,27 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-int main(){
-    printf("<< Valores iguais >>\n");
+int main()
+{
 
-    return 0;
+    printf("<< Valores iguais >> \n\n");
+
+    int x = 1;
+    int v[8];
+    int i=0;
+
+    for(i=0;i<8;i++){
+
+        printf("Entre com o numero: %d\n", x);
+        fflush(stdin);
+        scanf("%d",&v[i]);
+        x++;
+
+    }
+
+
+
+   return 0;
 }
-
-/*
-Faça um programa que leia um vetor de 8 posições e verifique se existem 
-valores iguais e os escreva (cada número repetido deve aparecer somente 
-uma vez na resposta)
-
-Exemplo de saída:
-<< Valores iguais >>
-Entre com o numero 1: 5
-Entre com o numero 2: 6
-Entre com o numero 3: 4
-Entre com o numero 4: 5
-Entre com o numero 5: -3 
-Entre com o numero 6: -3
-Entre com o numero 7: -3
-Entre com o numero 8: 6
-
-
-Valores repetidos: 5, 6, -3
-*/
