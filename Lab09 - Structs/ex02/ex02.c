@@ -1,40 +1,51 @@
+
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-int main(){
-    printf("<<  >>\n");
+int main()
+{
 
-    return 0;
+    struct data{
+
+    int dia;
+    int mes;
+    int ano;
+
+    };
+
+    int i = 0;
+    struct data datas[3];
+    int maiorano;
+
+    for(i=0;i<3;i++){
+
+        printf("Digite o Dia: ");
+        fflush(stdin);
+        scanf("%d",&datas[i].dia);
+
+        printf("Digite o Mes: ");
+        fflush(stdin);
+        scanf("%d",&datas[i].mes);
+
+        printf("Digite o Ano: ");
+        fflush(stdin);
+        scanf("%d",&datas[i].ano);
+
+    }
+
+
+    for(i=0;i<3;i++){
+
+        while (maiorano < datas[i].ano){
+
+            maiorano = datas[i].ano;
+
+
+        }
+
+   }
+  printf("\n maior ano %d",maiorano);
+   return 0;
 }
-
-/*
-1) Crie uma estrutura chamada data, que armazena o dia, mês e o ano (ilustração abaixo).  
-Cadastre 3 datas, mostre as datas e o maior ano cadastrado. 
-
-Data***
-+------------+------------+---------------+
-| Dia        | Mês        |   Ano         |    
-+------------+------------+---------------+
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-Digite o dia: 2
-Digite o mes: Janeiro
-Digite o ano: 2015
-
-Digite o dia: 15
-Digite o mes: Maio
-Digite o ano: 2018
-
-Digite o dia: 21
-Digite o mes: Dezembro
-Digite o ano: 2020
-
-
-Datas cadastradas: 
-Dia 2 de Janeiro de 2015
-Dia 15 de Maio de 2018
-Dia 21 de Dezembro de 2020
-
-2020 foi o maior ano cadastrado.
--------------------------------------------------------------------------------
-*/
