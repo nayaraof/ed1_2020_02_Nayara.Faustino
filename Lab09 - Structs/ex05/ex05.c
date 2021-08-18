@@ -1,61 +1,171 @@
+5)
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
 
-int main(){
-    printf("<<  >>\n");
+int main()
+{
 
-    return 0;
+    int i = 0;
+    int x=0;
+
+    float maiornota=0.0;
+    float maiormedia=0.0;
+    float menormedia=100.0;
+
+
+    struct aluno{
+
+    char matricula[10];
+    char nome[30];
+    float nota1;
+    float nota2;
+    float nota3;
+    float media;
+    int faltas;
+
+    };
+
+    struct aluno alunos[3];
+
+
+
+    while(x != 6){
+
+        printf("\n\nMenu de Opcoes\n\n");
+        printf("1. Cadastre os 3 alunos\n");
+        printf("2. Listar aluno com maior nota da primeira prova\n");
+        printf("3. Listar aluno com a maior media geral\n");
+        printf("4. Listar aluno com a menor media geral\n");
+        printf("5. Mostrar situacao final dos alunos\n");
+        printf("6. Sair\n");
+
+        scanf("%d", &x);
+        system("cls || clear");
+
+        switch(x)
+        {
+            case 1:
+
+                printf("Cadastre os 3 alunos");
+
+                for(i=0;i<3;i++){
+
+                    printf("\n\nDigite a Matricula:");
+                    fflush(stdin);
+                    gets(alunos[i].matricula);
+
+                    printf("\nDigite o nome:");
+                    fflush(stdin);
+                    gets(alunos[i].nome);
+
+                    printf("\nDigite a nota da prova 1:");
+                    fflush(stdin);
+                    scanf("%f", &alunos[i].nota1);
+
+                    printf("\nDigite a nota da prova 2:");
+                    fflush(stdin);
+                    scanf("%f", &alunos[i].nota2);
+
+                    printf("\nDigite a nota da prova 3:");
+                    fflush(stdin);
+                    scanf("%f", &alunos[i].nota3);
+
+                    printf("\nDigite o numero de faltas:");
+                    fflush(stdin);
+                    scanf("%d", &alunos[i].faltas);
+
+                    fflush(stdin);
+
+                    alunos[i].media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3)/3;
+                }
+
+                break;
+
+
+            case 2:
+
+                for(i=0;i<3;i++){
+                    if(alunos[i].nota1 > maiornota){
+                        maiornota = alunos[i].nota1;
+                        }
+                    }
+                    for(i=0;i<3;i++){
+
+                        if(maiornota == alunos[i].nota1){
+                            printf("Aluno com a maior nota da primeira prova: %s",alunos[i].nome);
+                        }
+                    }
+
+
+                break;
+
+            case 3:
+
+                for(i=0;i<3;i++){
+                    if(alunos[i].media > maiormedia){
+                        maiormedia = alunos[i].media;
+                    }
+                }
+
+                for(i=0;i<3;i++){
+
+                    if(maiormedia == alunos[i].media){
+                        printf("Aluno com a maior media geral: %s",alunos[i].nome);
+                    }
+                }
+
+                break;
+
+            case 4:
+
+
+            for(i=0;i<3;i++){
+                    if(alunos[i].nota1 <= menormedia){
+                        menormedia = alunos[i].nota1;
+                        }
+                    }
+                    for(i=0;i<3;i++){
+                    if(menormedia == alunos[i].media){
+                        printf("Aluno com menor media geral: %s",alunos[i].nome);
+                    }
+                }
+
+                break;
+
+            case 5:
+
+                printf("Situacao final dos alunos\n\n");
+
+                for(i=0;i<3;i++){
+
+                    printf("Aluno: %s",alunos[i].nome);
+
+                    if(alunos[i].media >= 60 && alunos[i].faltas <= 72*25/100){
+
+                        printf("\nAluno Aprovado\n");
+                    }
+
+                    else if (alunos[i].media < 60 && alunos[i].faltas <= 72*25/100)
+                        printf("\nAluno Reprovado por Nota\n");
+
+                    else printf("\nAluno Reprovado por Falta\n");
+
+                }
+
+
+                break;
+
+            case 0:
+
+                break;
+
+            }
+    }
+
+
+
+   return 0;
 }
-
-/*
-5.Crie uma estrutura representando os alunos de um curso de graduação. 
-A estrutura deve conter a matrícula do aluno, nome, nota da primeira prova, 
-nota da segunda prova, nota da terceira prova, média e número de faltas.
-
-    (a) Permita ao usuário entrar com os dados de 3 alunos. 
-    (b) Encontre o aluno com maior nota da primeira prova.
-    (c) Encontre o aluno com maior média geral.
-    (d) Encontre o aluno com menor média geral.
-    (e) Mostre a situação final do aluno. Para ser aprovado o aluno precisa ter nota média final 
-        maior ou igual a 60 e ter presença maior ou igual a 75% (considere um total de 72 aulas). 
-        No caso de reprovação, mostrar o motivo da mesma, isto é, caso o aluno foi reprovado por 
-        falta, mostrar “Reprovado por falta”. Caso tenha sido reprovado por nota, mostrar “Reprovado por nota”. 
-        Se um aluno foi reprovado por falta e por nota, prevalece, como motivo para reprovação, as faltas. Assim,
-        mostrar a mensagem “Reprovado por falta”. 
-
-
--------------------------------------------------------------------------------
-Exemplo de saída:
-Entre com os dados do 1º aluno: 
-Matricula: 1
-Nome: Paulo
-Nota da prova 1: 50
-Nota da prova 2: 70
-Nota da prova 3: 60
-Numero de faltas: 12
-
-Entre com os dados do 2º aluno: 
-Matricula: 2
-Nome: Gustavo
-Nota da prova 1: 95
-Nota da prova 2: 90
-Nota da prova 3: 100
-Numero de faltas: 19
-
-Entre com os dados do 3º aluno: 
-Matricula: 3
-Nome: Luis
-Nota da prova 1: 50
-Nota da prova 2: 60
-Nota da prova 3: 58
-Numero de faltas: 2
-
-Aluno com maior nota na prova 1 foi Gustavo com 95,0 pontos.
-Aluno com maior media geral foi Gustavo com 95,0 pontos.
-Aluno com menor media geral foi Luis com 56,0 pontos.
-
-Situacao dos Alunos: 
-1- Paulo. Aprovado.
-2- Gustavo. Reprovado por falta.
-3- Luis. Reprovado por nota.
--------------------------------------------------------------------------------
-*/
