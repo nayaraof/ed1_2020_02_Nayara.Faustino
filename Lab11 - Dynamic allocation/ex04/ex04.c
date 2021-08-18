@@ -1,35 +1,35 @@
 #include <stdio.h>
-//lembre-se de incluir as bibliotecas adequadas
+#include <stdlib.h>
 
-int main(){
-    printf("Quantos pontos deseja digitar: ");
 
+typedef struct pontint{
+    int px;
+    int py;
+} pontos;
+int main()
+{
+    pontos *ponto;
+    int qnt = 0, i = 0;
+    printf("Digite a quantidade de pontos para cadastro: ");
+    scanf("%d", &qnt);
+    printf("\n");
+    ponto = malloc(sizeof(pontos) * qnt);  // Define o tamanho do array (quantidade de pontos que o cara quer colocar * o tamanho em bits de cada struct)
+    for(i=0;i<qnt;i++)
+    {
+        printf("Entre com a coordenada x do ponto %d: ", i);
+        scanf("%d", &ponto[i].px);
+        printf("\n");
+        printf("Entre com a coordenada y do ponto %d: ", i);
+        scanf("%d", &ponto[i].py);
+        printf("\n");
+    }
+    printf("Pontos digitados: ");
+    for(i=0;i<qnt;i++)
+    {
+        if(i == 0)
+            printf("(%d,%d)",ponto[i].px, ponto[i].py);
+        if(i > 0)
+            printf(";(%d,%d)",ponto[i].px, ponto[i].py);
+    }
     return 0;
 }
-
-/*
-4)Crie uma struct que armazene pontos inteiros (coordenadas x e y – valores inteiros). 
-Crie dinamicamente um  vetor de tamanho n (informado pelo usuário) e indique as 
-coordenadas x e y de cada ponto. Ao final, mostrar todos os números digitados.
-
-
-Exemplo de saída:
-Quantos pontos deseja digitar: 5
-Entre com a coordenada x do ponto 1: 3
-Entre com a coordenada y do ponto 1: 5
-
-Entre com a coordenada x do ponto 2: 4
-Entre com a coordenada y do ponto 2: 8
-
-Entre com a coordenada x do ponto 3: 3
-Entre com a coordenada y do ponto 3: 4
-
-Entre com a coordenada x do ponto 4: 6
-Entre com a coordenada y do ponto 4: 7
-
-Entre com a coordenada x do ponto 5: 23
-Entre com a coordenada y do ponto 5: 25
-
-Pontos digitados: (3,5); (4,8); (3,4); (6,7); (23,25)
-
-*/
