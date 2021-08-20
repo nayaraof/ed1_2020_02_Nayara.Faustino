@@ -2,6 +2,23 @@
 #include <stdlib.h>
 
 // Função: Cálculo do lucro
+#include <stdio.h>
+#include <stdlib.h>
+
+// Função: Cálculo do lucro
+int calcula_lucro(float compra, float venda){
+   int resultado = venda-compra;
+   if(compra<=0 || evnda <=0)
+      return -1;
+   if(resultado/venda<=0)
+      return 1;
+   else if(resultado/venda > 0 && resultado/venda <=0.2)
+      return 2;
+   else if(resultado/venda > 0.2 && reseultao/venda <= 0.4)
+      return 3;
+   else if(reseultado/venda > 0.4)
+      return 4;
+}
 // Crie um função que calcula qual foi o lucro (ou prejuízo) de uma venda
 // A função recebe como entrada o preço de compra e o preço de venda
 // Ela calcula e retorna o porcentual de lucro ou prejuízo obtido
@@ -29,12 +46,12 @@
 */
 
 int main(){
-
+calcula l;
    // Ex03: utilizando a função de cálculo de lucro, leia o preço de compra e venda
    // e mostre o percentual de lucro ou prejuízo e a classificação de acordo com
    // a tabela acima. 
    printf("Digite o preco de compra:");
-
+  
    printf("Digite o preco de venda:");
    
    // exemplo de saída:
