@@ -9,7 +9,7 @@ typedef struct ponto Ponto;
 
 struct circulo{
     Ponto p;
-    int raio;
+    double raio;
 };
 typedef struct circulo Circulo;
 
@@ -39,7 +39,7 @@ Circulo cir;
     printf("\nEntre com o raio do circulo:");
     scanf("%f",&cir.raio);
     printf("Calculo: Centro (%d, %d);",cir.p.x,cir.p.y);
-    printf("Raio %d;",cir.raio);
+    printf("Raio %f;",cir.raio);
     printf("Area: %f",3,14*cir.raio*cir.raio);
     printf("Distancia = %f",sqrt(cir.p.x*cir.p.x + cir.p.y*cir.p.y));
 
