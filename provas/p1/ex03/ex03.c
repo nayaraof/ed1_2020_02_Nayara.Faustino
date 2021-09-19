@@ -6,12 +6,14 @@
 #include <stdlib.h>
 
 // Função: Cálculo do lucro
+// check:<<<erro: e3.1b: A função deve calcular e retornar por referência a porcentagem>>>>
 int calcula_lucro(float compra, float venda){
+   // check:<<<erro: e3.3: Cálculo com erros (não corresponde a porcentagem pedida OU erro na fórmula OU porcentagem baseada na venda e não na compra OU divisão inteira )>>>>
    int resultado = venda-compra;
-   if(compra<=0 || evnda <=0)
+   if(compra<=0 || evnda <=0)// check:<<<erro: fazer isso primeiro>>>>
       return -1;
    if(resultado/venda<=0)
-      return 1;
+      return 1;// check:<<<erro: vc não deve ficar recalculando resultado/venda toda hora>>>>
    else if(resultado/venda > 0 && resultado/venda <=0.2)
       return 2;
    else if(resultado/venda > 0.2 && reseultao/venda <= 0.4)
@@ -57,6 +59,6 @@ calcula l;
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
-  
+  // check:<<<erro: faltou chamar a função no programa principal>>>>
     return 0;
 }

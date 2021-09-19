@@ -23,7 +23,7 @@ int main(){
     //  - ler do teclado a quantidade de livros que o usuário escolheu
     //  - ler do teclado as informações dos livros
     printf("Informe quantos livros deseja cadastrar: ");
-    int main()
+    int main()// check:<<<comentário: duplicado o main>>>>
  {
     int c;
 
@@ -40,7 +40,7 @@ int main(){
 
     for (int x = 0; x < c; x++){
         printf("Digite o nome do livro: ");
-        scanf("%s", &livro[x].nome);
+        scanf("%s", &livro[x].nome);// check:<<<erro: só le uma palavra do nome do livro>>>>
 
  
 
@@ -61,7 +61,7 @@ int main(){
  
 
     printf(livro[0].nome);
-    printf(livro[1].nome);
+    printf(livro[1].nome);// check:<<<erro: se a pessoa digitou um livro só vai dar erro>>>>
  }
     
     
