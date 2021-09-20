@@ -1,4 +1,4 @@
-#include "TLista.h"
+#include "TSeqList.h"
 #include <stdio.h>
 
 struct lista{
