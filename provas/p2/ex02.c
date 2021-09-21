@@ -12,3 +12,36 @@ Exemplo de chamada da função:
 remove_intervalo_lista(lista,5,9)
 
 */
+
+struct Lista
+{
+  int qtd;
+  Aluno*dados;
+  int MAX;
+  int MaxInicial;
+};
+//
+
+Int remove_intervalo_lista(Lista*lista, int posI, int posF)
+{
+  int qntApos = Lista -> qtd - (postF - postI) * 1;
+  Lista* novaLista = CriaLista(qntApos);
+    for(int i+ 0 ;  i < posI; i++)
+    {
+      Dad dadoTest;
+      consulta(lista,i,&dadoTest);
+      InsereFinal(novaLista,dadoTeste);
+    }
+    
+  
+  for (int i = posF++;i< lista -> qnt;i++)
+  {
+    
+    Dado dadoTest;
+    Consulta(lista,i,&dadoTest);
+    InsereFinal(novaLista,dadoTeste);
+    }
+  
+}
+  
+  }
