@@ -24,7 +24,7 @@ mat2d_increase_size(mat,3,3)
 
 
 
-²struct TMat2D
+²struct TMat2D*
  {
   int nrows; // número de linhas
   int ncolumns; // número de colunas
@@ -32,3 +32,23 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
+
+
+int mat2d-increse_size(TMat2D* *mat,int columns,int rows){
+    int size;
+    TMat2D *matAux= mat2D_create(rows,columns);
+    if(mat==NULL||x<0||y<0){
+        return -1;
+    }
+    
+    for(int i=0;i<size;i++){
+        if(i!=rows*i+1){
+            matAux->data[i]=mat->data[i];
+        }
+        
+    }
+    mat=matAux;
+    free(mat);
+
+return 0;
+}
