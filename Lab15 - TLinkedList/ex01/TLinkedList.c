@@ -83,31 +83,6 @@ int list_push_back(TLinkedList *list, struct aluno al)
     }
 }
 
-int list_print(TLinkedList *list)
-{
-    if (list == NULL)
-    {
-        return INVALID_NULL_POINTER;
-    }
-    else
-    {
-        list_node *aux;
-        aux = list->head;
-        printf("\nImprimindo a lista\n");
-        while (aux != NULL)
-        {
-            printf("\n------------------\n");
-            printf("Matricula: %d\n", aux->data.matricula);
-            printf("Nome: %s\n", aux->data.nome);
-            printf("Notas: %f; %f; %f;\n", aux->data.n1, aux->data.n2, aux->data.n3);
-
-            aux = aux->next;
-        }
-        printf("\nFim da lista \n");
-        return SUCCESS;
-    }
-}
-
 int list_free(TLinkedList *list)
 {
     if (list == NULL)
