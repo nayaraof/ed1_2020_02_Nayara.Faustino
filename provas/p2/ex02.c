@@ -21,7 +21,7 @@ struct Lista
   int MaxInicial;
 };
 //
-
+// check:<<<erro: exercício bem fora do que foi pedido>>>>
 Int remove_intervalo_lista(Lista*lista, int posI, int posF)
 {
   int qntApos = Lista -> qtd - (postF - postI) * 1;

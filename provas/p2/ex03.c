@@ -33,11 +33,13 @@ mat2d_increase_size(mat,3,3)
 
 */
 
-
+// check:<<<erro: e3.1: não fez os testes comparando o tamanho novo com o antiga para saber se o tamanho é maior OU fez o teste considerando somente o total de elementos  OU fez erros no teste>>>>
+// check:<<<erro: e3.3: deve-se lembrar da representação linear da matriz na memória. Isso implica em reposicionar alguns elementos no vetor linear que estavam na matriz original>>>>
+// check:<<<erro: e3.4: Faltou zerar os novos elementos>>>>
 int mat2d-increse_size(TMat2D* *mat,int columns,int rows){
     int size;
-    TMat2D *matAux= mat2D_create(rows,columns);
-    if(mat==NULL||x<0||y<0){
+    TMat2D *matAux= mat2D_create(rows,columns);// check:<<<erro: era para apresentar qq função usada>>>>
+    if(mat==NULL||x<0||y<0){// check:<<<erro: x ? y?>>>>
         return -1;
     }
     
@@ -47,7 +49,7 @@ int mat2d-increse_size(TMat2D* *mat,int columns,int rows){
         }
         
     }
-    mat=matAux;
+    mat=matAux;// check:<<<erro: ambas serão apagadas>>>>
     free(mat);
 
 return 0;

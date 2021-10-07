@@ -19,11 +19,13 @@ troca_pos_lista( lista, 4, 10)
     int qtd;
     struct aluno dados[MAX];
  };
-
+*/
+// check:<<<erro: e1.1: Declaração da função errada.>>>>
 int troca_pos_lista (struct lista lista , int i, int j){
 if(lista == NULL || i<0 || j<0){
 return-1;
-}
+}// check:<<<erro: e1.2: erro em testes de tamanho da lista com as posições de troca (posições aceitas >=1 <=qtd/ teste de lista null>>>>
+
 struct aluno auxA;
 auxA = lista.dados[j]; // c=b
 lista.dados[j]=lista.dados[i]; // b=a
