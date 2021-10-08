@@ -5,11 +5,21 @@ faça um programa que lê uma string do teclado e,
 Entregar somente o código do programa principal. 
 Não há necessidade de mostrar o código da pilha
 
-Se a pessoa digitar abcd, o programa vai devolver: dcba
+Se a pessoa digitar abcd, o programa vai devolver: dcba 
 
-*/
+
 
 int main(){
-
+    scanf("%d",&n);//nro de valores
+    char vet[n];
+    for(n)
+    scanf("%c"vet[i]);//pega todos os valores na main()
     
-}
+    stack st = create_stack();
+    for(i=0;i<n;i++){
+      empilha(vet[i]);
+    }
+    while(stack_size()!=0)
+    imprimeTop(st);
+    desempilha();
+    }
