@@ -1,0 +1,79 @@
+#include "TMat2D.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+struct TMat2D{
+
+    int nrows;
+    int ncolumns;
+    double *data; /* ponteiro para os dados da matriz */
+
+};
+typedef struct TMat2D TMat2D;
+
+TMat2D *mat2D_create(int nrows,int ncolumns){
+
+    TMat2D *mat;
+
+    if(nrows<0 || ncolumns<0){
+        return NULL;
+    }
+
+    mat = malloc(1*sizeof(TMat2D));
+
+    if(mat == NULL){
+        return NULL;
+    }
+
+
+    mat->nrows = nrows;
+    mat->ncolumns = ncolumns;
+    mat->data = malloc(nrows*ncolumns*sizeof(double));
+
+    if(mat->data == NULL){
+        free(mat);
+        return NULL;
+    }
+
+    return mat;
+}
+
+
+int mat2D_set_value(TMat2D *mat,int i,int j,double val){
+
+    int pos;
+
+    /* j = numero da coluna q o usuario passou / nrows = numero de linhas da struct da matriz / i = numero da linha q o usuario passou*/
+    pos = j * mat->nrows + i;
+
+    mat->data[pos] = val;
+
+
+    /* mat aponta para o endereco da struct / -> disreferencia o ponteiro (*) e acessa o campo data (.)*/
+
+
+}
+
+
+int mat2D_get_value(TMat2D *mat,int i,int j,double*val){
+
+    /* 0 true */
+
+    if(mat == NULL || val==NULL){
+        return -1;
+    }
+
+
+    if (i>=0 && i<mat->nrows && j>=0 && j<mat->ncolumns){
+
+        int pos;
+
+        pos = j * mat->nrows + i;
+
+        *val = mat->data[pos];
+
+    }
+    else return -1;
+
+
+}
