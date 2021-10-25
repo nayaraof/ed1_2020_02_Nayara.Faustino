@@ -1,26 +1,50 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+
+void troca(int **pa,int **pb){
+    int *temp;
+    temp = *pa;
+    *pa = *pb;
+    *pb = temp;
+
+
+}
+
 
 int main(){
-    printf("Digite o número A: ");
-    printf("Digite o número B: ");
+
+    int *pa, *pb, i,j;
+    pa=malloc(sizeof(int)*10);
+    pb=malloc(sizeof(int)*20);
+
+    for(i=0;i<10;i++){
+        pa[i]=i;
+    }
+
+    for(j=0;j<20;j++){
+        pb[j]=j;
+    }
+
+    for(i=0;i<10;i++){
+    printf("%d ",pa[i]);
+    }
+    printf("\n");
+    for(j=0;j<20;j++){
+    printf("%d ", pb[j]);
+    }
+
+    troca(&pa, &pb);
+
+    printf("\n");
+    for(i=0;i<20;i++){
+    printf("%d ",pa[i]);
+    }
+    printf("\n");
+    for(j=0;j<10;j++){
+    printf("%d ", pb[j]);
+    }
+free(pa);
+free(pb);
 
     return 0;
 }
-
-/*
-=> Faça um procedimento “Troque”, que recebe duas variáveis reais A e B
-e troca o valor delas (i.e., A recebe o valor de B e B recebe o valor de A).
-Mostre no programa principal o resultado da troca. 
-
-
-No programa principal, solicite ao usuário o número A e o número B.
-
--------------------------------------------------------------------------------
-Exemplo de Saída:
-
-Digite o número A: 2
-Digite o número B: 5
-O número A eh: 5
-O número B eh: 2
--------------------------------------------------------------------------------
-*/
