@@ -1,31 +1,58 @@
+18)
+
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    printf("Digite o tamanho do vetor: ");
 
-    return 0;
+    void maioremenor(double *vetor,int n);
+    void imprime_vet_double(double *vetor, int n);
+
+    double vetor[10] = {100,200,3,4,5,6,7,8,9,10};
+
+    int n=10;
+
+    maioremenor(&vetor,n);
+    imprime_vet_double(&vetor,n);
+
 }
 
-/*
-=> Crie um procedimento que recebe um vetor de double como 
-entrada e devolve o maior e o menor elemento do vetor. Mostre no 
-programa principal o vetor, o maior e o menor elemento.
+
+void maioremenor (double *vetor,int n){
+
+    int i=0;
+
+    double maior = 0.0;
+    double menor = 0.0;
+
+    for(i=0;i<n;i++){
+
+        if(vetor[i] > maior ){
+            maior = vetor[i];
+        }
+    }
+    menor = maior;
+    for(i=0;i<n;i++){
+        if(vetor[i] < menor){
+            menor = vetor[i];
+        }
+    }
 
 
-No programa principal, solicite ao usuário o tamanho do vetor, e os
-valores a serem computados.
+     printf("Maior: %.2f, Menor: %.2f\n",maior,menor);
 
--------------------------------------------------------------------------------
-Exemplo de Saída:
+}
 
-Digite o tamanho do vetor: 3
-Digite o valor 1: -1
-Digite o valor 2: 0.02
-Digite o valor 3: 3
+void imprime_vet_double(double *vetor, int n){
 
-O vetor principal eh: -1.00, 0.02, 3.00
-O maior valor eh 3.00
-O menor valor eh -1.00
--------------------------------------------------------------------------------
-Obs: note que para este caso, foram consideradas duas casas após o ponto. 
-*/
+    int i=0;
+
+    printf("Vetor:");
+
+    for(i=0;i<n;i++){
+
+        printf("%.2f, ", vetor[i]);
+
+    }
+
+}
