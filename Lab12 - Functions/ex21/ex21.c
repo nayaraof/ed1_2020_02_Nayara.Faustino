@@ -1,36 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    printf("Digite o tamanho do vetor: ");
-    printf("Digite o valor do escalar: ");
 
-    return 0;
+    void copiarvet(float *vet_origem, float *vet_dest, int n);
+    void imprime_vet_float(float *vetor, int n);
+
+    float vet_origem[10] = {-100,200,-3,4,5,-6,7,-8,9,10};
+
+    float vet_dest[10] = {10,20,-30,40,50,-60,7,-8,9,10};
+
+    int n = 10;
+
+    int z = 0;
+
+    copiarvet(&vet_origem, &vet_dest, n);
+
 }
 
-/*
-=> Faça uma função para multiplicar um vetor por um escalar 
-(um número). Mostre, no programa principal, o vetor antes e depois 
-da multiplicação.
 
-Chamada:
-multvet(vetor, n, escalar);
+void copiarvet(float *vet_origem, float *vet_dest, int n){
+
+    int i=0;
 
 
-No programa principal, solicite ao usuário o tamanho do vetor, os valores
-a serem computados e o valor do escalar.
+        for(i=0;i<n;i++){
 
--------------------------------------------------------------------------------
-Exemplo de Saída:
+            vet_dest[i] = vet_origem[i];
 
-Digite o tamanho do vetor: 5
-Digite o valor 1: 2
-Digite o valor 2: 4
-Digite o valor 3: 10
-Digite o valor 4: 6
-Digite o valor 5: 5
-Digite o valor do escalar: 3
+        }
 
-O vetor de origem eh: 2, 4, 10, 6, 5
-O vetor final eh: 6, 12, 30, 18, 15
--------------------------------------------------------------------------------
-*/
+        for(i=0;i<n;i++){
+
+            printf("%.2f, ", vet_dest[i]);
+
+        }
+    }
