@@ -1,36 +1,63 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("Os valores inseridos neste vetor de inteiros eh: ");
-    //imprime_vet_int(vetori,n);
 
-    printf("Os valores inseridos neste vetor de float eh: ");
-    //imprime_vet_float(vetorf,n);
+int main() {
 
-    printf("Os valores inseridos neste vetor de double eh: ");
-    //imprime_vet_double(vetord,n);
+void imprime_vet_int(int *vetori, int n);
+void imprime_vet_double(double *vetori, int n);
+void imprime_vet_float(float *vetori, int n);
 
-    return 0;
+
+	float vetori[5]={1,2,3,4,5};
+	int n=5;
+
+
+	imprime_vet_float(vetori,n);
+
+	return 0;
 }
 
-/*
-=> Crie três funções chamadas imprime_vet_int, 
-imprime_vet_double, imprime_vet_float que mostra o conteúdo de 
-um vetor de inteiros, double, e float, respectivamente. Use essas 
-funções sempre que precisar mostrar um vetor.
+void imprime_vet_int(int *vetori, int n){
+
+    int i;
+
+    printf("Vetor:");
+
+    for(i=0;i<n;i++){
+
+        printf("%d, ", vetori[i]);
+
+    }
+
+}
 
 
-Exemplo de Chamada:
 
-    imprime_vet_int(vetori,n);
-    imprime_vet_double(vetord,n);
-    imprime_vet_float(vetorf,n);
+void imprime_vet_double(double *vetori, int n){
 
--------------------------------------------------------------------------------
-Exemplo de Saída:
+    int i;
 
-Os valores inseridos neste vetor de inteiros eh: 1 2 3 4 5 
-Os valores inseridos neste vetor de float eh: 1.20 2.30 3.40 4.50 5.50 
-Os valores inseridos neste vetor de double eh: 1.20 2.30 3.40 4.50 5.50 
--------------------------------------------------------------------------------
-*/
+    printf("Vetor:");
+
+    for(i=0;i<n;i++){
+
+        printf("%f, ", vetori[i]);
+
+    }
+
+}
+
+void imprime_vet_float(float *vetori, int n){
+
+    int i;
+
+    printf("Vetor:");
+
+    for(i=0;i<n;i++){
+
+        printf("%f, ", vetori[i]);
+
+    }
+
+}
