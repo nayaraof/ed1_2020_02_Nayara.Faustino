@@ -1,28 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    printf("O vetor de origem eh: ");
-    printf("O vetor de destino eh: ");
-    printf("O vetor de destino apos a copia eh: ");
 
-    return 0;
+    void copiarvet(float *vet_origem, float *vet_dest, int n);
+    void imprime_vet_float(float *vetor, int n);
+
+    float vet_origem[10] = {-100,200,-3,4,5,-6,7,-8,9,10};
+
+    float vet_dest[10] = {10,20,-30,40,50,-60,7,-8,9,10};
+
+    int n = 10;
+
+    int z = 0;
+
+    copiarvet(&vet_origem, &vet_dest, n);
+
 }
 
-/*
-=> Faça uma função para copiar um vetor inteiro para outro 
-vetor. Ambos vetores devem ter o mesmo tamanho. Mostre no 
-programa principal os dois vetores.
 
-Chamada:
-copiarvet(vet_origem, vet_destino, n);
+void copiarvet(float *vet_origem, float *vet_dest, int n){
+
+    int i=0;
 
 
-Os valores são definidos na função principal.
--------------------------------------------------------------------------------
-Exemplo de Saída:
+        for(i=0;i<n;i++){
 
-O vetor de origem eh: 1, 2, 3, 4, 5
-O vetor de destino eh: 1, 2, 3, 3, 6
-O vetor de destino apos a copia eh: 1, 2, 3, 4, 5
--------------------------------------------------------------------------------
-*/
+            vet_dest[i] = vet_origem[i];
+
+        }
+
+        for(i=0;i<n;i++){
+
+            printf("%.2f, ", vet_dest[i]);
+
+        }
+    }
