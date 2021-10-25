@@ -1,29 +1,56 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    printf("<<  >>\n");
 
-    return 0;
+    int negativos(float *vetor, int n);
+    void imprime_vet_float(float *vetor, int n);
+
+    float vetor[10] = {-100,200,-3,4,5,-6,7,-8,9,10};
+
+    int z = 0;
+
+    int n=10;
+
+
+    z = negativos(&vetor, n);
+
+    printf("Quantidade de numeros negativos: %d",z);
+
+
+    imprime_vet_double(&vetor,n);
+
 }
 
-/*
-=> Implemente uma função que receba como parâmetro um 
-vetor de n números reais (VET) de tamanho N e retorne quantos 
-números negativos há a nesse vetor. Use o seguinte protótipo:
 
-int negativos(float *vet, int N); 
+int negativos (float *vetor,int n){
 
-No programa principal, solicite ao usuário o tamanho do vetor, e os
-valores a serem computados.
--------------------------------------------------------------------------------
-Exemplo de Saída:
+    int i=0;
+    int neg=0;
 
-Digite o tamanho do vetor: 3
-Digite o valor 1: -1
-Digite o valor 2: 3
-Digite o valor 3: -2
+    for(i=0;i<n;i++){
 
-O vetor principal eh: -1.00, 3.00, -2.00
-O vetor tem 2 numero(s) negativo(s)
--------------------------------------------------------------------------------
-*/
+        if(vetor[i] < 0 ){
+            neg++;
+
+        }
+    }
+
+
+    return neg;
+
+}
+
+void imprime_vet_double(float *vetor, int n){
+
+    int i=0;
+
+    printf("\nVetor:");
+
+    for(i=0;i<n;i++){
+
+        printf("%.2f, ", vetor[i]);
+
+    }
+
+}
