@@ -1,28 +1,24 @@
+
+
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("Digite o valor de x: ");
-    printf("Digite o valor de y: ");
+struct ponto {
+	float x;
+	float y;
+};
+typedef struct ponto ponto;
 
-    return 0;
+void imprime_ponto(ponto p);
+
+int main() {
+
+	ponto p = {20, 10};
+
+	imprime_ponto(p);
+	return 0;
 }
 
-/*
-Observação: Para os próximos exercícios, crie uma struct chamada ponto, que 
-armazena dois números reais que representam coordenadas cartesianas.
-
-=> Faça uma função chamada imprime_ponto, que recebe uma 
-struct do tipo ponto e mostra na tela o ponto no seguinte formato 
-(ponto.x, ponto.y)
-
-Exemplo de chamada da função:
-imprime_ponto(p)
-
--------------------------------------------------------------------------------
-Exemplo de Saída:
-
-Digite o valor de x: 10
-Digite o valor de y: 5
-O ponto digitado eh: (10,5)
--------------------------------------------------------------------------------
-*/
+void imprime_ponto(ponto p) {
+	printf("(%.2f, %.2f)", p.x, p.y);
+}
