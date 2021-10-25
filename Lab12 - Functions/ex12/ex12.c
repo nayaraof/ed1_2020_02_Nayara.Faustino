@@ -1,30 +1,36 @@
+12)
+
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("Digite o valor de x1: ");
-    printf("Digite o valor de y1: ");
-    printf("Digite o valor de x2: ");
-    printf("Digite o valor de y2: ");
+struct ponto {
+	float x;
+	float y;
+};
+typedef struct ponto ponto;
 
-    return 0;
+void imprime_ponto(ponto p1, ponto p2, ponto p3);
+ponto somapontos(ponto p1, ponto p2);
+
+int main() {
+
+	ponto p1 = {20, 10};
+	ponto p2 = {30, 20};
+	ponto p3;
+
+
+    p3 = somapontos(p1, p2);
+    imprime_ponto(p1, p2, p3);
+
+	return 0;
 }
 
-/*
-Observação: Lembre-se de utilizar a struct chamada ponto, que 
-armazena dois números reais que representam coordenadas cartesianas.
-
-=> Crie um procedimento idêntico ao exercício anterior, mas que 
-agora retorne void e coloque o resultado da soma no terceiro 
-argumento da função.
-
-
--------------------------------------------------------------------------------
-Exemplo de Saída:
-
-Digite o valor de x1: 1
-Digite o valor de y1: 2
-Digite o valor de x2: 3
-Digite o valor de y2: 4
-A soma de (1,2) com (3,4) eh (4,6)
--------------------------------------------------------------------------------
-*/
+ponto somapontos(ponto p1, ponto p2){
+    ponto p3;
+    p3.x = p1.x + p2.x;
+    p3.y = p1.y + p2.y;
+    return p3;
+}
+void imprime_ponto(ponto p1, ponto p2, ponto p3) {
+	printf("A soma de (%.2f, %.2f) com (%.2f, %.2f) eh (%.2f, %.2f)", p1.x,p1.y,p2.x,p2.y,p3.x, p3.y);
+}
