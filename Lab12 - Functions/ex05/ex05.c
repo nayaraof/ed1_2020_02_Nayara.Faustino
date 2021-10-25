@@ -1,32 +1,39 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<stdbool.h>
 
-int main(){
-    printf("Digite o valor de n: ");
+int main()
+{
 
-    return 0;
+double x = 0.0;
+int n = 0;
+
+    Quadrado(x);
+
+  return 0;
+
 }
 
-/*
-=> Faça uma função para verificar se um número 
-é um quadrado perfeito (retorne Verdadeiro caso seja).   
+void Quadrado(float x){
 
-Ex: QuadradoPerfeito(4) retorna verdadeiro; 
-    QuadradoPerfeito(10) retorna falso; 
+    double aux=0;
+    printf("Numero Quadrado perfeito?\n ");
+    printf("Digite valor de x: ");
+    fflush(stdin);
+    scanf("%f",&x);
 
-obs: Pode-se retornar os valores 0 (para verdadeiro) e 1 (para falso).
+    if(x>=0){
 
-No programa principal, solicite ao usuário o valor de n.
+        x = x*x;
 
--------------------------------------------------------------------------------
-Exemplo de Saída 1:
+        aux = fmod(sqrt(x),2.0);
 
-Digite o valor de n: 4
-O numero 4 eh um quadrado perfeito
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-Exemplo de Saída 2:
+        if(aux == 0){
+                printf("\nVerdadeiro");
+        }
 
-Digite o valor de n: 10
-O numero 10 não eh um quadrado perfeito
--------------------------------------------------------------------------------
-*/
+        else printf("\nFalso");
+
+     }
+}
