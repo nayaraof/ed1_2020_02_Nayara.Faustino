@@ -1,33 +1,39 @@
+8)
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-int main(){
-    printf("Digite o valor de y: ");
-    printf("Digite o percentual de alteração x: ");
+int main()
+{
 
-    return 0;
+   float x = 0.0;
+   float y = 0.0;
+
+   incp(x,y);
+
+   return 0;
 }
 
-/*
-=> Faça uma função que altere um valor de um número real em x%. Se 
-o valor de x for negativo ele deve ser decrementado, se for positivo 
-aumente.
+void incp(float x, float y){
 
-Uso da função: 
-x = incp(y,10);
-z = incp(y,-20);
+    fflush(stdin);
+    scanf("%f",&x);
+    fflush(stdin);
+    scanf("%f",&y);
+    if(x>0){
 
--------------------------------------------------------------------------------
-Exemplo de Saída 1:
+        x = x + x*(y/100
+        printf("Digite a % para aumentar");
+        printf("Valor positivo = %f",x);
 
-Digite o valor de y: 100
-Digite o percentual de alteracao: 0.10 // 0.10 equivale a 10%
-O valor alterado eh: 110
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-Exemplo de Saída 2:
+    }
 
-Digite o valor de y: -100
-Digite o percentual de alteração: .10
-O valor alterado eh: -110
--------------------------------------------------------------------------------
-*/
+    else{
+
+        x = x - x*(y/100);
+        printf("Digite a % para decrementar");
+        printf("Valor negativo = %f",x);
+    }
+
+}
