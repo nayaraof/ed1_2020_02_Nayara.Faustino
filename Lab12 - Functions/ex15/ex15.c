@@ -1,24 +1,57 @@
+15) 
+
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    
+struct ponto {
+	float x;
+	float y;
+};
 
-    return 0;
+typedef struct ponto ponto;
+
+void inc_dir(ponto * p1, char l);
+
+int main() {
+
+	ponto p1 = {10,20};
+
+	char n = 'n';
+	char s = 's';
+	char l = 'l';
+	char o = 'o';
+
+	inc_dir(&p1, n);
+	inc_dir(&p1, s);
+	inc_dir(&p1, l);
+	inc_dir(&p1, o);
+
+
+	return 0;
 }
 
-/*
-=> Faça um procedimento chamado inc_dir, que faz o ponto 
-andar uma unidade para leste, oeste, norte, sul (passar como 
-referência e retorno void)
 
-Exemplo de chamada:
-inc_dir(p,'l'); // anda uma unidade para o leste (incrementa x)
-inc_dir(p,'o'); // anda uma unidade para o oeste (decrementa x)
+void inc_dir(ponto * p1, char l){
 
--------------------------------------------------------------------------------
-Exemplo de Saída:
+    switch(l) {
+        case 'n':
+            (*p1).y = (*p1).y + 1;
 
-(1,3) norte => (1,4)
-(2,4) leste => (3,4)
--------------------------------------------------------------------------------
-*/
+            printf("Norte:(%.2f, %.2f)\n", (*p1).x,(*p1).y);
+            break;
+        case 's':
+            (*p1).y = (*p1).y - 1;
+            printf("Sul:(%.2f, %.2f)\n", (*p1).x,(*p1).y);
+            break;
+        case 'l':
+            (*p1).x = (*p1).x +1;
+
+            printf("Leste:(%.2f, %.2f)\n", (*p1).x,(*p1).y);
+            break;
+        case 'o':
+            (*p1).x = (*p1).x - 1;
+
+            printf("Oeste:(%.2f, %.2f)\n", (*p1).x,(*p1).y);
+            break;
+    }
+}
