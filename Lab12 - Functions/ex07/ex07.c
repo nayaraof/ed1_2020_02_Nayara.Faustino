@@ -1,50 +1,38 @@
+7)
+
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
+#include<stdbool.h>
 
-void troca(int **pa,int **pb){
-    int *temp;
-    temp = *pa;
-    *pa = *pb;
-    *pb = temp;
+int main()
+{
+    float a = 0.0;
+    float b = 0.0;
 
+    Troque(a,b);
+
+  return 0;
 
 }
 
+void Troque(float a, float b){
 
-int main(){
+    float aux = 0.0;
 
-    int *pa, *pb, i,j;
-    pa=malloc(sizeof(int)*10);
-    pb=malloc(sizeof(int)*20);
+    printf("Troca valores\n ");
+    printf("Digite valor de a: ");
+    fflush(stdin);
+    scanf("%f",&a);
 
-    for(i=0;i<10;i++){
-        pa[i]=i;
-    }
+    printf("Digite valor de b: ");
+    fflush(stdin);
+    scanf("%f",&b);
 
-    for(j=0;j<20;j++){
-        pb[j]=j;
-    }
+    aux = a;
+    a = b;
+    b = aux;
 
-    for(i=0;i<10;i++){
-    printf("%d ",pa[i]);
-    }
-    printf("\n");
-    for(j=0;j<20;j++){
-    printf("%d ", pb[j]);
-    }
+    printf("Valor de a:%.2f b:%.2f", a,b);
 
-    troca(&pa, &pb);
-
-    printf("\n");
-    for(i=0;i<20;i++){
-    printf("%d ",pa[i]);
-    }
-    printf("\n");
-    for(j=0;j<10;j++){
-    printf("%d ", pb[j]);
-    }
-free(pa);
-free(pb);
-
-    return 0;
 }
