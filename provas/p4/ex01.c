@@ -28,14 +28,16 @@ int concat_string(int *vet1, int *vet2)
         return -1;
         size_t n = sizeof(aux);//tamanho de aux
         int j=0;//contador para string2
-        for(int i=0;i<(int)n;i++){
+        for(int i=0;i<(int)n;i++)
+        {
             aux[i]=vet1[i];
-            if(vet1[i+1]==(int)sizeof(vet1)){
+            if(vet1[i+1]==(int)sizeof(vet1))
+            {
               aux[i]=vet2[j];
               j++;
             }
         }
-    return *aux;
+    return 0;
 }
 
 //main.c
@@ -47,7 +49,8 @@ int main()
     size_t size = sizeof(vet3);
 
     printf("Vetor Concatenado = ");
-    for(int i =0;i<(int)size;i++){
+    for(int i =0;i<(int)size;i++)
+    {
         printf("%d ", vet3[i]);
     }
 }
