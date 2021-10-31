@@ -23,7 +23,7 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 int concat_string(int *vet1, int *vet2)
 {
     int *aux;
-    aux = malloc(1*sizeof(int)*(sizeof(vet1) + sizeof(vet2)));
+    aux = malloc(1*sizeof(int)*(sizeof(vet1) + sizeof(vet2)));// check:<<<erro: errado, retorna o tamanho do ponteiro>>>>
     if (aux == NULL)
         return -1;
         size_t n = sizeof(aux);//tamanho de aux
@@ -44,7 +44,7 @@ int concat_string(int *vet1, int *vet2)
 int main()
 {
     int vet1[3]={1,5,2}, vet2[2]={10,30};
-    int *vet3=concat_string(vet1,vet2);
+    int *vet3=concat_string(vet1,vet2);// check:<<<erro: funcao retorna inteiro>>>>
 
     size_t size = sizeof(vet3);
 

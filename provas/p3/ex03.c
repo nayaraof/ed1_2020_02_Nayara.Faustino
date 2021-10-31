@@ -8,6 +8,7 @@ Não há necessidade de mostrar o código da pilha
 Se a pessoa digitar abcd, o programa vai devolver: dcba 
 
 
+*/
 
 int main(){
     scanf("%d",&n);//nro de valores
@@ -23,3 +24,4 @@ int main(){
     imprimeTop(st);
     desempilha();
     }
+    // check:<<<erro: não está seguindo o que fizemos no curso mas vou considerar o raciocínio>>>>

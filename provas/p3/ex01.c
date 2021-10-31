@@ -15,16 +15,16 @@ lista (que estão no .h)
   
   int list_erase_max_nota_n1(TDLinkedList * li){
 
-    if(list_size(li)==NULL)
+    if(list_size(li)==NULL)// check:<<<erro: size com NULL nao comparáveis>>>>
         return 0;
-    aluno aux = li->begin;
+    aluno aux = li->begin;// check:<<<erro: ponteiro ao invés de aluno>>>>
     aluno aux = 
-    float max = 10;//total
+    float max = 10;//total// check:<<<erro: essa será a máxima, mas para procurar tem que ser a mínima>>>>
     i=0;
     while (aux->prox != NULL){
-        if(aux->dados->n1=max){
+        if(aux->dados->n1=max){// check:<<<erro: está testando com '=' ao invés de > (= é atribuição)>>>>
             max=aux->dados->n1
-            list_erase(aux,i);
+            list_erase(aux,i);// check:<<<erro: pode nao ser a maior nota e já está apagando>>>>
             
         }
         aux=aux->prox;

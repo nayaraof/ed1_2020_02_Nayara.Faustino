@@ -6,7 +6,7 @@ percorrida ainda, o próximo elemento é a cabeça. Depois, ao chamar a função
 novamente, será devolvido o segundo elemento, e assim sucessivamente.
 
 (a) mostrar como fica a estrutura do TAD
-
+*/
 
  struct circlist
  {
