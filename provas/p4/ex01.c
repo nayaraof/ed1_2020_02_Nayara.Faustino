@@ -20,37 +20,39 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 
 */
 
-int concat_string(int *vet1, int *vet2)
+int concat_string(int *vet1, int *vet2, int *vet3, vet*vet_size)
 {
     int *aux;
     aux = malloc(1*sizeof(int)*(sizeof(vet1) + sizeof(vet2)));// check:<<<erro: errado, retorna o tamanho do ponteiro>>>>
     if (aux == NULL)
         return -1;
-        size_t n = sizeof(aux);//tamanho de aux
-        int j=0;//contador para string2
-        for(int i=0;i<(int)n;i++)
-        {
-            aux[i]=vet1[i];
-            if(vet1[i+1]==(int)sizeof(vet1))
-            {
-              aux[i]=vet2[j];
-              j++;
-            }
+    size_t n = sizeof(aux) / 4;//tamanho de aux em inteiro  
+    int j=0;//contador para string2   
+    for(int i=0;i<(int)n;i++){
+        aux[i]=vet1[i];
+        if(vet1[i+1]==(int)sizeof(vet1)){
+           aux[i]=vet2[j];
+            j++;
         }
+    }
+    vet3 = aux;
+    vet_size = sizeof(vet3);
     return 0;
 }
 
+---------------------------------------------------------------------
 //main.c
-int main()
+----------------------------------------------------------------------   
+    
+    int main()
 {
     int vet1[3]={1,5,2}, vet2[2]={10,30};
     int *vet3=concat_string(vet1,vet2);// check:<<<erro: funcao retorna inteiro>>>>
 
     size_t size = sizeof(vet3);
-
     printf("Vetor Concatenado = ");
-    for(int i =0;i<(int)size;i++)
-    {
+    for(int i =0;i<(int)size;i++){
         printf("%d ", vet3[i]);
     }
 }
+

@@ -25,6 +25,7 @@ struct clistnode
 
 int list_next(TClList *list, struct estudante *next_elem)
 
+
 {
     if(list == null)
        return null_pointer;
