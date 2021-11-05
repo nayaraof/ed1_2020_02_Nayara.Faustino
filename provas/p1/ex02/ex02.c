@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 // Definir as estruturas necessárias aqui (copiar do exercício anterior):
-struct livro{
+struct livro
+{
     char *nome;
     double preco;
     int novo;          //1 para novo, 0 para usado
@@ -15,10 +16,12 @@ struct livro{
 
 // check:<<<erro: e2.6d: se todos os livros são novos o programa vai retornar errado>>>>
 
-Livro buscar(Livro *lib, int size){
+Livro buscar(Livro *lib, int size)
+{
     Livro aux;
     aux.ano=10000000;// check:<<<comentário: poderia usar uma variável inteira normal>>>>
-    for(int i;i<size;i++){// check:<<<erro: faltou inicializar i com 0>>>>
+    for(int i;i<size;i++)
+    {// check:<<<erro: faltou inicializar i com 0>>>>
         if(lib[i].novo==0){//se não ,não novo,
             if(lib[i].ano<aux.ano){
                 aux=lib[i];
@@ -79,3 +82,5 @@ int main(){
   
     return 0;
 }
+----------------------------------------------------------------------------------------------------------------------
+    c
