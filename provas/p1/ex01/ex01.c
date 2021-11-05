@@ -1,36 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 
-// Fazer um programa para cadastro de livros. As informações para cadastro são: 
-// - o nome do livro
-// - O preço
-// - Indicação se o livro é novo ou usado
-// - ano de compra
-
-
-// Definir as estruturas necessárias aqui:
-struct livro{
-    char nome[100];
-    double preco;
-   int  novo;  //1 para novo, 0 para usado
-    int ano;
- };
- typedef struct livro Livro;
-
-int main(){
-
-    // Ex 01: permitir que o usuário cadastre quantos livros quiser
-    //  - ler do teclado a quantidade de livros que o usuário escolheu
-    //  - ler do teclado as informações dos livros
-    printf("Informe quantos livros deseja cadastrar: ");
-    int main()// check:<<<comentário: duplicado o main>>>>
- {
-    int c;
-
- 
-
-    printf("Informe quantos livros deseja cadastrar: ");
-    scanf("%d", &c);
 -------------------------------------------------------------------------------------------------------------------------------------------------
     correcao_sub
     #include <stdio.h>  
